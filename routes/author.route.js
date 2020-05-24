@@ -37,6 +37,7 @@ router.post('/authors',(req,res) =>{
 router.put('/authors/:id',(req, res) =>{
     const id = req.params.id;
     const {name, lastname} = req.body;
+    /**Chequeo si el autor que quiero modificar esta agregado */
     if ( _.find(authors, function(o) { return o.id == id; })){
         if(name && lastname){
             _.each(authors,(a) =>{
@@ -51,7 +52,7 @@ router.put('/authors/:id',(req, res) =>{
             res.status(400).json({"statusCode":"Bad request"});
         }
     }
-    else {
+    else {/**Devuelvo un 404 porque el autor que quiero modificar no existe */
         res.status(404).json({"statusCode":"No hay un autor registrado que se corresponda con esa id"});
     }
     
@@ -59,8 +60,10 @@ router.put('/authors/:id',(req, res) =>{
 
 router.delete('/authors/:id',(req, res)=>{
     const id = req.params.id;
+    /**Chequea si el autor que quiero borrar esta agregado */
     if ( _.find(authors, function(o) { return o.id == id; })){
         for (var i = 0 ; i < books.length ; i++){
+            /**Si el autor que quiero borrar tiene un libro entonces no lo puedo borrar */
             if (books[i].authorId == id){
                 res.status(400).json({"statusCode":"Bad request"});
             }
@@ -70,7 +73,7 @@ router.delete('/authors/:id',(req, res)=>{
         })
         res.json(authors);
     }
-    else {
+    else {/**Devuelvo un 404 si el autor que quiero borrar no existe */
         res.status(404).json({"statusCode":"No hay un autor registrado que se corresponda con esa id"});
     }
 })
