@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1",
+        "name": "Cien años de soledad",
+        "authorId": "1"
+    },
+    {
+        "id": "2",
+        "name": "El proceso",
+        "authorId": "3"
+    },
+    {
+        "id": "3",
+        "name": "Hamlet",
+        "authorId": "2"
+    },
+    {
+        "id": "4",
+        "name": "Orgullo y prejuicio",
+        "authorId": "4"
+    }
+]

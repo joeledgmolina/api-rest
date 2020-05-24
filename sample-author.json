@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1",
+        "name": "Gabriel García",
+        "lastname": "Márquez"
+    },
+    {
+        "id": "2",
+        "name": "William",
+        "lastname": "Shakespeare"
+    },
+    {
+        "id": "3",
+        "name": "Franz",
+        "lastname": "Kafka"
+    },
+    {
+        "id": "4",
+        "name": "Jane",
+        "lastname": "Austen"
+    }
+]
